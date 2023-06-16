@@ -1,7 +1,7 @@
 <script setup>
 import NavBar from './components/navbar/NavBar.vue';
 import BestSellings from './components/content/BestSellings.vue';
-import MiscellaneousCards from './components/content/cards/MiscellaneousCards.vue';
+import CardsGrid from './components/content/cards/CardsGrid.vue';
 import SalesComparison from './components/content/SalesComparison.vue';
 import EventGalleries from './components/content/EventGalleries.vue'
 
@@ -17,7 +17,7 @@ import EventGalleries from './components/content/EventGalleries.vue'
           <BestSellings />
         </section>
         <section id="miscellaneous">
-          <MiscellaneousCards />
+          <CardsGrid />
         </section>
       </div>
       <div class="column">
@@ -64,6 +64,58 @@ body {
   width: 100%;
   margin: 0px auto;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  background: #272E35;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px 15px 20px;
+}
+
+.card .header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.card .filter {
+  display: flex;
+  width: max-content;
+  gap: 1px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.card .filter .label {
+  font-size: 6px;
+  color: #B7B7B7;
+}
+
+.card .filter img {
+  width: 12px;
+}
+
+
+.card-shadow {
+  box-shadow: 0px 6px 11px rgba(62, 73, 84, 0.04);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#event-galleries {
+  flex-grow: 1;
+  aspect-ratio: 1 / 1;
 }
 
 @media (min-width: 578px) {
@@ -76,11 +128,32 @@ body {
   .container {
     max-width: 768px;
   }
+
+  .card .header {
+    margin-bottom: 1rem;
+  }
+
+  .card .filter .label {
+    font-size: 0.85rem;
+  }
+
+  .card .filter img {
+    width: 1.75rem;
+  }
 }
 
 @media (min-width: 992px) {
   .container {
     max-width: 992px;
+    flex-direction: row;
+  }
+
+  .column {
+    width: 50%;
+  }
+
+  #event-galleries {
+    aspect-ratio: initial;
   }
 }
 
@@ -93,6 +166,12 @@ body {
 @media (min-width: 1400px) {
   .container {
     max-width: 1400px;
+  }
+}
+
+@media (min-width: 1920px) {
+  .container {
+    max-width: 1920px;
   }
 }
 </style>
