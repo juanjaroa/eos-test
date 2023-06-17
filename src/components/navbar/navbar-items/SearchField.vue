@@ -50,17 +50,19 @@ input::placeholder {
         width: 25vw;
     }
 
-    #field img {
-        right: 25px;
-        width: 24px;
-    }
+
 }
 
 @media (min-width: 1200px) {}
 
 @media (min-width: 1400px) {
     #field {
-        height: 56px;
+        height: 58px;
+    }
+
+    #field img {
+        right: 25px;
+        width: 24px;
     }
 }
 </style>
