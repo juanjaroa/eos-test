@@ -6,4 +6,14 @@
     </button>
 </template>
 
-<style scoped></style>
+<style scoped>
+button {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    button {
+        display: flex;
+    }
+}
+</style>

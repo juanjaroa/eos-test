@@ -14,7 +14,7 @@
     position: relative;
     display: flex;
     align-items: center;
-    height: 36px;
+    height: 36.5px;
 }
 
 #field img {
@@ -39,10 +39,10 @@ input::placeholder {
     color: #B9B9B9;
 }
 
-@media (min-width: 768px) {
-    #field {
-        height: 100%;
-    }
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {
+
 
     input {
         font-size: 16px;
@@ -53,6 +53,14 @@ input::placeholder {
     #field img {
         right: 25px;
         width: 24px;
+    }
+}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {
+    #field {
+        height: 56px;
     }
 }
 </style>

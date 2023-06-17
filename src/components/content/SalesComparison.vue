@@ -5,18 +5,19 @@
 <template>
     <div class="card card-shadow special">
         <div class="header">
-            <p class="title">Best Selling</p>
+            <div>
+                <p class="title">Sales Comparison</p>
+                <div class="wrap"><span class="sub">Than last day</span></div>
+
+            </div>
             <div class="percent">
                 <span>94%</span>
             </div>
         </div>
-        <div class="best-day">
-            <span class="day">Tuesday</span>
-            <span class="amoung">215,523 pcs</span>
-        </div>
+
         <div class="chart">
             <div class="pie-chart">
-                <img src="" alt="">
+                <img src="../content/assets/barChar-especial.png" alt="">
             </div>
         </div>
 
@@ -29,13 +30,39 @@
     display: none;
 }
 
-@media (min-width: 578px) {
+.card .header {
+    align-items: center;
+    padding: 1rem 3rem 0 2rem;
+}
+
+.header .title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    opacity: 0.91;
+}
+
+.header .wrap {
+    position: relative;
+    height: 0;
+    opacity: 0.91;
+}
+
+header .sub {
+    position: absolute;
+}
+
+.percent span {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+@media (min-width: 578px) {}
+
+@media (min-width: 768px) {
     .card.special {
         display: flex;
     }
 }
-
-@media (min-width: 768px) {}
 
 @media (min-width: 992px) {}
 

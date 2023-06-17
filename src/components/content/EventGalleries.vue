@@ -3,16 +3,18 @@
     <div id="gallery">
         <h2>Event Galleries</h2>
 
-        <swiper :navigation="true" :modules="modules" class="card card-shadow mySwiper">
-            <swiper-slide>Slide 1</swiper-slide>
-            <swiper-slide>Slide 2</swiper-slide>
-            <swiper-slide>Slide 3</swiper-slide>
-            <swiper-slide>Slide 4</swiper-slide>
-            <swiper-slide>Slide 5</swiper-slide>
-            <swiper-slide>Slide 6</swiper-slide>
-            <swiper-slide>Slide 7</swiper-slide>
-            <swiper-slide>Slide 8</swiper-slide>
-            <swiper-slide>Slide 9</swiper-slide>
+        <swiper @swiper="onSwiper" :navigation="false" :loop="true" :autoplay="{
+            delay: 3500,
+        }" :modules="modules" class="card card-shadow mySwiper">
+
+            <swiper-slide v-for="(index) in 10" :key="index" class="swiper"
+                :style="{ background: 'url(' + backGround + index + ')', backgroundSize: 'cover', backgroundPosition: 'center' }">
+                <div class="control">
+                    <button @click.stop="slider.slidePrev()"><img src="./assets/left.png" alt=""></button>
+                    <span>SLIDE {{ index }}</span>
+                    <button @click.stop="slider.slideNext()"><img src="./assets/right.png" alt=""></button>
+                </div>
+            </swiper-slide>
         </swiper>
 
     </div>
@@ -21,6 +23,7 @@
 
 <script>
 // Import Swiper Vue.js components
+import { ref } from "vue";
 import { Swiper, SwiperSlide } from 'swiper/vue';
 
 // Import Swiper styles
@@ -30,7 +33,7 @@ import 'swiper/css/navigation';
 
 
 // import required modules
-import { Navigation } from 'swiper';
+import { Autoplay, Navigation } from 'swiper';
 
 export default {
     components: {
@@ -38,8 +41,15 @@ export default {
         SwiperSlide,
     },
     setup() {
+        const slider = ref(null)
+        const onSwiper = (swiper) => {
+            slider.value = swiper;
+        };
         return {
-            modules: [Navigation],
+            modules: [Autoplay, Navigation],
+            backGround: 'https://picsum.photos/800/600?random=',
+            slider,
+            onSwiper
         };
     },
 };
@@ -53,19 +63,33 @@ export default {
 .swiper-slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
-
-    /* Center slide text vertically */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.swiper-slide img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+
+.control {
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control img,
+.control span {
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2));
+}
+
+button {
+    background: transparent;
+    cursor: pointer;
+}
+
+button img {
+    width: 0.75rem;
 }
 
 #gallery {
@@ -98,7 +122,11 @@ export default {
     }
 }
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .control {
+        width: 60%;
+    }
+}
 
 @media (min-width: 1200px) {}
 

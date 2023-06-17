@@ -53,6 +53,7 @@ body {
 }
 
 .breadcrumbs {
+  display: none;
   width: 100%;
   padding: 19px 90px;
   background: #2D3339;
@@ -63,10 +64,10 @@ body {
 .container {
   width: 100%;
   margin: 0px auto;
-  padding: 1rem;
+  padding: 1rem 1rem 2rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
 }
 
 .card {
@@ -94,7 +95,7 @@ body {
 }
 
 .card .filter .label {
-  font-size: 6px;
+  font-size: 0.5rem;
   color: #B7B7B7;
 }
 
@@ -110,7 +111,7 @@ body {
 .column {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.6rem;
 }
 
 #event-galleries {
@@ -118,23 +119,34 @@ body {
   aspect-ratio: 1 / 1;
 }
 
+button,
+img.chevron {
+  cursor: pointer;
+}
+
 @media (min-width: 578px) {
   .container {
     max-width: 578px;
+    padding: 1rem 1rem 3rem;
+  }
+
+  .card .filter .label {
+    font-size: 0.75rem;
   }
 }
 
 @media (min-width: 768px) {
   .container {
     max-width: 768px;
+    padding: 3rem 1rem;
+  }
+
+  .breadcrumbs {
+    display: flex;
   }
 
   .card .header {
     margin-bottom: 1rem;
-  }
-
-  .card .filter .label {
-    font-size: 0.85rem;
   }
 
   .card .filter img {
@@ -166,6 +178,12 @@ body {
 @media (min-width: 1400px) {
   .container {
     max-width: 1400px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1600px;
   }
 }
 

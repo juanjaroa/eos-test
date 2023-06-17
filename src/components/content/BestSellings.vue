@@ -21,7 +21,7 @@
                 <img src="./assets/pieChart.png" alt="">
             </div>
             <div class="bar-char">
-                <img src="./assets/barChart3.png" alt="">
+                <img src="./assets/barChart2.png" alt="">
             </div>
         </div>
 

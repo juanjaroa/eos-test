@@ -95,22 +95,41 @@ button .badge {
 }
 
 @media (min-width: 567px) {
-    header {
-        padding: 32px 43px 32px 54px;
-    }
+
 
     .left-items {
         gap: 15px;
     }
 
+    .vertical-divider {
+        display: block;
+    }
+
+}
+
+@media (min-width: 768px) {
     .center-items {
         display: flex;
         margin-left: 5vw;
         margin-right: auto;
     }
+
+
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
+    header {
+        padding: 32px 43px 32px 54px;
+    }
+}
+
+@media (min-width: 1200px) {
+    #logo {
+        width: 70px;
+    }
+}
+
+@media (min-width: 1400px) {
     #logo {
         width: 84px;
     }
@@ -131,10 +150,6 @@ button .badge {
 
     .right-items {
         gap: 3vw;
-    }
-
-    .vertical-divider {
-        display: block;
     }
 }
 </style>

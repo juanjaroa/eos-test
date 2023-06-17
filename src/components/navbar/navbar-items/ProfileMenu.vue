@@ -36,25 +36,34 @@
     aspect-ratio: 1 / 1;
 }
 
-@media (min-width: 768px) {
-    #profile {
-        padding-right: 12px;
-    }
-
-    #profile-pic {
-        width: 56px;
-        margin-right: 25px;
-    }
-
-    #profile .chevron {
-        width: 24px;
-    }
-}
+@media (min-width: 768px) {}
 
 @media (min-width: 992px) {
     .profile-name {
         display: block;
         margin-right: 18px;
+    }
+
+    #profile {
+        padding-right: 12px;
+    }
+
+    #profile-pic {
+
+        margin-right: 25px;
+    }
+}
+
+@media (min-width: 1200px) {}
+
+@media (min-width: 1400px) {
+    #profile-pic {
+        width: 56px;
+
+    }
+
+    #profile .chevron {
+        width: 24px;
     }
 }
 </style>
